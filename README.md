@@ -1,2 +1,2 @@
-# Learnig-PHP
+# Learning-PHP
 Projects done using PHP
