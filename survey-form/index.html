@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>registration form</title>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <h1>Student Registration Form</h1>
+        <p class="description">Thank you for taking the time to register for our training program</p>
+    </header>
+    <main>
+        <form id=reg-form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()" >
+            <div class="form-input">
+                <label for="fname" id="fname-label">First Name<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="text" id="fname" name="firstname" placeholder="Enter first name" class="form-input-size" required>
+            </div>
+            <div class="form-input">
+                <label for="lname" id="lname-label">Last Name<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="text" id="lname" name="lastname" placeholder="Enter last name" class="form-input-size" required>
+            </div>
+            <div class="form-input">
+                <label for="dob" id="dob-label">Date of Birth<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class='form-input'>
+                <p>Gender</p>
+               <!--<label for="gender-btn" id="gender-label">Gender </br></label>-->
+                <input type='radio' name='gender' id='gender-btn' value='male' checked />Male   </br>
+                <input type='radio' name='gender' id='gender-btn' value='female' />Female </br>
+                <input type='radio' name='gemder' id='gender-btn' value='other' />Other </br>
+            </div>
+            <div class="form-input">
+                <label for="email" id="email-label">Email<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" class="form-input-size" required>
+            </div>
+            <div class="form-input">
+                <label for="phonenumber" id="phonenumber-label">Phone Number<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="number" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" class="form-input-size" required>
+            </div>
+            <div class="form-input">
+                <label for="uname" id="uname-label">User Name<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="text" id="uname" name="username" placeholder="Enter Prefered username" class="form-input-size" required>
+            </div>
+            <div class="form-input">
+                <label for="pwd" id="pwd-label">Password<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="password" id="pwd" name="password" placeholder="Enter Prefered password" class="form-input-size" required>
+            </div>
+            <div class="form-input">
+                <label for="confirm-pwd" id="confirm-ped-label">Confirm Password<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="password" id="confirm-pwd" name="confirm-password" placeholder="Re-Enter password" class="form-input-size" required>
+            </div>
+            <div class='form-input'>
+                <p>What Technology Languages and Frameworks would you like to learn?
+                    <span>(Check all that apply)</span>
+                </p>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='HTML'>HTML</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='CSS'>CSS</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='python'>Python</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value="django">Django</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='flask'>Flask</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='javaScript'>JavaScript</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='react'>React</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='angular'>Angular</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='vue'>Vue</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='java'>Java</label>
+                <label><input type='checkbox' id='check-box' name="languages[]" value='PHP'>PHP</label>
+                 <label><input type='checkbox' id='check-box' name="languages[]" value='c++'>C++</label>               
+                <label><input type='checkbox' id='check-box' name="languages[]" value='other'>Other</label>
+            </div>
+            <div class='form-input'>
+                <p>How would you like the classes delivered?</p>
+                <select name="class-delivered" id='dropdown' class='form-input-size' required>
+                    <option disabled selected value>--Select--</option>
+                    <option name="online" value='online'>Online</option>
+                    <option name="in-person" value='in-person'>In-Person</option>
+                    <option name="hybrid" value='hybrid'>Hybrid</option>
+                </select>
+            </div>
+            <div class='form-input'>
+                <p>Enter any reasonable accomodations you may require <span>(Eg. screen-reader, sign-language-interpreter ...)</span></p>
+                <textarea type='text' placeholder='Enter your request and rationale here...' name="accomodation"></textarea>
+            </div>
+ 
+            <div class='form-input'>
+                <button type='submit' id='submit' name= "submit" value="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+    </div>
+ 
+<script type="text/javascript" src="app.js"></script>   
+</body>
+</html>
